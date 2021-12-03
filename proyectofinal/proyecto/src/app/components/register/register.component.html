@@ -1,0 +1,74 @@
+<!-- Formulario simple que no guarda datos-->
+
+
+
+<div class="container">
+
+<form [formGroup]="registerForm" class="m-3 col-lg-6 ">
+  <h1>Registrarse </h1>
+  <div class="form-group mb-3 ">
+    <label for="nombre" class="form-control" > <i class="fas fa-user"></i>   Nombre</label>
+    <input [class.valido] type="text" id="nombre" name="nombre"  class="form-control" maxlength="12" required formControlName="nombre">
+    <div *ngIf="nombreControl.invalid && (nombreControl.dirty || nombreControl.touched)" class="alert alert-danger">
+      <div *ngIf="nombreControl.hasError('required')">El campo 'nombre' es requerido</div>
+      <div *ngIf="nombreControl.hasError('minlength')">>El nombre dcontener 3 o más caracteres</div></div>
+
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="apellido" class="form-control" ><i class="fas fa-user"></i>   Apellido</label>
+    <input type="text" id="apellido" name="apellido" class="form-control" maxlength="12" required formControlName="apellido">
+    <div *ngIf="apellidoControl.invalid && (apellidoControl.dirty || apellidoControl.touched)" class="alert alert-danger">
+      <div *ngIf="apellidoControl.hasError('required')">El campo 'Apellido' es requerido</div>
+      <div *ngIf="apellidoControl.hasError('minlength')">>El apellido debe contener 3 o más caracteres</div>
+    </div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-control" ><i class="fas fa-envelope-open"></i>   E-mail</label>
+    <input type="email" id="email" name="email" class="form-control" maxlength="35" required formControlName="email">
+    <div *ngIf="emailControl.invalid && (emailControl.dirty || emailControl.touched)" class="alert alert-danger">
+      <div *ngIf="emailControl.hasError('required')">El campo 'E-mail' es requerido</div>
+
+    </div>
+
+
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="telefono" class="form-control" ><i class="fas fa-phone"></i>   Teléfono</label>
+    <input type="text" id="telefono" name="telefono" class="form-control" maxlength="12" required formControlName="telefono">
+    <div *ngIf="telefonoControl.invalid && (telefonoControl.dirty || telefonoControl.touched)" class="alert alert-danger">
+      <div *ngIf="telefonoControl.hasError('required')">El campo 'Teléfono' es requerido</div>
+      <div *ngIf="telefonoControl.hasError('minlength')">>El teléfono debe contener 6 o más caracteres</div>
+    </div>
+
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="fechaNacimiento" class="form-control" ><i class="fas fa-calendar-week"></i>   Fecha de nacimiento</label>
+    <input type="date" id="fechaNacimiento" name="fechaNacimiento" class="form-control" required formControlName="fechaNacimiento">
+    <div *ngIf="fechaNacimientoControl.invalid && (fechaNacimientoControl.dirty || fechaNacimientoControl.touched)" class="alert alert-danger">
+      <div *ngIf="fechaNacimientoControl.hasError('required')">El campo es requerido</div>
+    </div>
+
+  </div>
+
+
+  <div class="form-group mb-3">
+    <label for="contraseña" class="form-control" ><i class="fas fa-key"></i>   Contraseña</label>
+    <input type="password" id="contraseña" name="contraseña" class="form-control" maxlength="9" required formControlName="contraseña"
+    *ngIf="passwordControl.valid" class="success"
+    >
+    <div *ngIf="passwordControl.invalid && (passwordControl.dirty || passwordControl.touched)" class="alert alert-danger">
+      <div *ngIf="passwordControl.hasError('required')">La contraseña es requerida</div>
+      <div *ngIf="passwordControl.hasError('minlength')">>La contraseña debe contener 6 o más caracteres</div>
+
+    </div>
+  </div>
+
+
+  <button [disabled]="!registerForm.valid" type="submit" class="btn btn-primary btn-lg" (click)="save()">Enviar</button>
+
+</form>
+</div>
