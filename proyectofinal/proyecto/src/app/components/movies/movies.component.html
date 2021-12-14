@@ -1,1 +1,13 @@
-<p>movies works!</p>
+<h1>Movies</h1>
+
+
+
+<div class="card" style="width: 18rem;" *ngFor="let movie of movies">
+  <img src={{movie.imagen}} class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{movie.nombre}}</h5>
+    <p class="card-text">Categoría: {{movie.calificacion}}</p>
+    <a href="#" class="btn btn-primary">Detalles</a>
+  </div>
+  <br>
+</div>
