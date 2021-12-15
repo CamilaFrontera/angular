@@ -1,4 +1,7 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../models/movie.model';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-movies',
@@ -8,32 +11,19 @@ import { Component, OnInit } from '@angular/core';
 export class MoviesComponent implements OnInit {
 
 
-  movies = [
-    {
-    nombre: 'La sirenita',
-    calificacion: 'niños',
-    imagen: 'https://m.media-amazon.com/images/I/711Bjf+3KuL._AC_SY679_.jpg'
+  constructor(
+    private movieService: MoviesService,
+    private router: Router
+  ) { }
 
-  },
-  {
-    nombre: 'Cenicienta',
-    calificacion: 'niños',
-    imagen: 'https://http2.mlstatic.com/D_NQ_NP_937656-MLA25958929008_092017-O.webp'
-  },
-  {
-    nombre: 'Blanca nieves',
-    calificacion: 'niños',
-    imagen: 'https://http2.mlstatic.com/D_NQ_NP_765866-MLA25759897064_072017-O.webp'
-  },
-  {
-    nombre: 'Lilo y stitch',
-    calificacion: 'niños',
-    imagen: 'https://m.media-amazon.com/images/I/71DhCXgo5xL._AC_SY606_.jpg'
-  }
-]
-  constructor() { }
+  movies: Movie[] = [];
 
   ngOnInit(): void {
+    this.movieService.getList().subscribe( movies => this.movies = movies);
+  }
+
+  navigateToDetail(id: string) {
+    this.router.navigate(['peliculas', id]);
   }
 
 }

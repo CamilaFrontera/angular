@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/services/user.service';
 
 
 @Component({
@@ -9,25 +8,15 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class LoginComponent implements OnInit {
 
-  user= {
-    email:'',
-    password: ''
-  }
 
 
 
-  constructor(private userService: UserService) { }
+
+  constructor() { }
 
   ngOnInit(): void {
   }
 
-  login(){
-    console.log(this.user);
-    const{email,password}= this.user;
-    this.userService.login(email,password).then(res=>{
-      console.log("logueado", res);
-
-    })
   }
 
-}
+
