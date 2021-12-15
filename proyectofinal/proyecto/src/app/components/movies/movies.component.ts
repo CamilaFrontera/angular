@@ -13,6 +13,7 @@ export class MoviesComponent implements OnInit {
     nombre: 'La sirenita',
     calificacion: 'niños',
     imagen: 'https://m.media-amazon.com/images/I/711Bjf+3KuL._AC_SY679_.jpg'
+
   },
   {
     nombre: 'Cenicienta',

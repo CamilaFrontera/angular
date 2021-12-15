@@ -13,11 +13,22 @@
   <title>Document</title>
 </head>
 <body>
-  <app-register></app-register>
-  <app-cart></app-cart>
-  <app-login></app-login>
-  <app-info></app-info>
-  <app-movies></app-movies>
+  <div class="container">
+    <div class="row">
+      <div class="col-6"><app-login></app-login></div>
+      <div class="col-6"><app-register></app-register></div>
+    </div>
+    <div class="row">
+      <app-movies></app-movies>
+    </div>
+    <div class="row">
+      <app-info></app-info>
+    </div>
+    <div class="row">
+      <app-cart></app-cart>
+    </div>
+  </div>
+
   <!--Bootstrap-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

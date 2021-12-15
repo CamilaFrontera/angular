@@ -17,3 +17,8 @@ background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, F
 h1{
   color: white;
 }
+
+
+.card{
+  margin-left: 10px;
+}
