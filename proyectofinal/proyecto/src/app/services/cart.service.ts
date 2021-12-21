@@ -3,9 +3,7 @@ import {Observable, of } from 'rxjs';
 import { Movie } from '../components/models/movie.model';
 
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class CartService {
 
   private list: Movie[] = [];

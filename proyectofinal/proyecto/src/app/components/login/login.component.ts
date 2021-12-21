@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../models/users.model';
 
 
 @Component({
@@ -11,10 +12,13 @@ export class LoginComponent implements OnInit {
 
 
 
-
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectedPerson(person: User){
+
   }
 
   }

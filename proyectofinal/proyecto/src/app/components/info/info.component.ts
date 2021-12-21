@@ -1,4 +1,10 @@
+
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../models/movie.model';
+import { MoviesService } from 'src/app/services/movies.service';
+
+
 
 @Component({
   selector: 'app-info',
@@ -7,9 +13,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InfoComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private movieService: MoviesService,
+    private router: Router
+  ) { }
+
+  movies: Movie[] = [];
 
   ngOnInit(): void {
+    this.movieService.getList().subscribe( movies => this.movies = movies);
+  }
+
+  navigateToDetail(id: string) {
+    this.router.navigate(['peliculas', id]);
   }
 
 }
+

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
+
 import { Movie } from '../components/models/movie.model';
 import { moviesMock } from './movies.mock';
 
@@ -7,6 +8,7 @@ import { moviesMock } from './movies.mock';
   providedIn: 'root'
 })
 export class MoviesService {
+
 
   constructor() { }
 

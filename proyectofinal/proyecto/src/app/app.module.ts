@@ -10,6 +10,9 @@ import { MoviesComponent } from './components/movies/movies.component';
 import { InfoComponent } from './components/info/info.component';
 import { CartComponent } from './components/cart/cart.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartService } from './services/cart.service';
+import { MoviesService } from './services/movies.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,10 +29,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [CartService,
+  MoviesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
