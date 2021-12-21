@@ -3,7 +3,7 @@ import { User } from "../components/models/users.model";
 
 
 
-export const personasMock: User[] = [
+export const usersMock: User[] = [
   { nombre: 'Pedro',
     apellido: 'Pérez',
     edad: 23,

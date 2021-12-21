@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { UsersService } from './users.service';
+import { usersMock } from './users.mock';
 import { User } from '../components/models/users.model';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,9 +9,11 @@ import { User } from '../components/models/users.model';
 export class LoginService {
 
 
-  // validateLogin(email,password){
 
-  //   user: User;
+  // validateLogin(email: string,password: string):Observable<User>{
+  //  let user: User | undefined = usersMock.find(user => email === user.email);
+
+  //   // return of (user);
 
 
   // }

@@ -1,15 +1,18 @@
-<h1>Películas</h1>
+
 
 
 <div class="row">
+  <h1>Películas</h1>
   <div class="card " style="width: 18rem;" *ngFor="let movie of movies" >
 
     <div class="card-body">
+      <img [src]="movie.image.url" class="card-img-top" alt="...">
       <h5 class="card-title">{{movie.title}}</h5>
       <p class="card-text">{{movie.principals}}</p>
 
-      <img [src]="movie.image.url" class="card-img-top" alt="...">
+
+      <button type="submit" class="btn btn-primary btn-block">Más Info</button>
     </div>
-    <br>
+
   </div>
 </div>
