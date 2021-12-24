@@ -2,6 +2,8 @@ import { Router } from '@angular/router';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Movie } from '../models/movie.model';
 import { MoviesService } from 'src/app/services/movies.service';
+import { Subscription } from 'rxjs';
+import { timingSafeEqual } from 'crypto';
 
 
 @Component({
@@ -22,8 +24,12 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
 
   movies: Movie[] = [];
 
+  // para poder desuscribirme
+
+  private suscripcion: Subscription | undefined;
+
   ngOnInit(): void {
-    this.movieService.getList().subscribe( movies => this.movies = movies);
+    this.suscripcion = this.movieService.getList().subscribe( movies => this.movies = movies);
     console.log('Hook onInit.')
   }
 
@@ -35,6 +41,8 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
   }
 
   ngOnDestroy(): void {
+    // me desubscribo
+    this.suscripcion?.unsubscribe();
       console.log('Hook onDestroy.')
   }
 
