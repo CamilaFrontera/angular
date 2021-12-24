@@ -13,6 +13,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CartService } from './services/cart.service';
 import { MoviesService } from './services/movies.service';
 import {HttpClientModule} from '@angular/common/http';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
     MoviesComponent,
     InfoComponent,
     CartComponent,
+    NavbarComponent,
 
   ],
   imports: [
@@ -29,7 +33,9 @@ import {HttpClientModule} from '@angular/common/http';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule
 
   ],
   providers: [CartService,

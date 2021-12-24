@@ -15,7 +15,7 @@ export const moviesMock: Movie[] = [
         "year": 1967,
         "principals": [
             {
-                "id": "/name/nm0529543",
+                "id": "nm0529543",
                 "legacyNameText": "Léaud, Jean-Pierre",
                 "name": "Jean-Pierre Léaud",
                 "billing": 1,
@@ -30,7 +30,7 @@ export const moviesMock: Movie[] = [
                 ]
             },
             {
-                "id": "/name/nm0243357",
+                "id": "nm0243357",
                 "legacyNameText": "Duport, Catherine-Isabelle",
                 "name": "Catherine-Isabelle Duport",
                 "as": "Catherine Duport",
@@ -46,7 +46,7 @@ export const moviesMock: Movie[] = [
                 ]
             },
             {
-                "id": "/name/nm0083211",
+                "id": "nm0083211",
                 "legacyNameText": "Bir, Jacqueline",
                 "name": "Jacqueline Bir",
                 "billing": 3,
@@ -76,7 +76,7 @@ export const moviesMock: Movie[] = [
         "year": 2013,
         "principals": [
             {
-                "id": "/name/nm3215890",
+                "id": "nm3215890",
                 "legacyNameText": "Cassell, Seth",
                 "name": "Seth Cassell",
                 "category": "actor",
@@ -91,7 +91,7 @@ export const moviesMock: Movie[] = [
             },
             {
                 "disambiguation": "I",
-                "id": "/name/nm5174220",
+                "id": "m5174220",
                 "legacyNameText": "Robertson, Lauren (I)",
                 "name": "Lauren Robertson",
                 "category": "actress",
@@ -125,7 +125,7 @@ export const moviesMock: Movie[] = [
         "principals": [
             {
                 "disambiguation": "I",
-                "id": "/name/nm0111013",
+                "id": "nm0111013",
                 "legacyNameText": "Brody, Adam (I)",
                 "name": "Adam Brody",
                 "category": "actor",
@@ -143,7 +143,7 @@ export const moviesMock: Movie[] = [
                 "startYear": 2016
             },
             {
-                "id": "/name/nm1346230",
+                "id": "nm1346230",
                 "legacyNameText": "Gathegi, Edi",
                 "name": "Edi Gathegi",
                 "category": "actor",
@@ -161,7 +161,7 @@ export const moviesMock: Movie[] = [
                 "startYear": 2016
             },
             {
-                "id": "/name/nm6569399",
+                "id": "nm6569399",
                 "legacyNameText": "Marrero, Otmara",
                 "name": "Otmara Marrero",
                 "category": "actress",
@@ -195,7 +195,7 @@ export const moviesMock: Movie[] = [
         "principals": [
             {
                 "disambiguation": "I",
-                "id": "/name/nm1517976",
+                "id": "nm1517976",
                 "legacyNameText": "Pine, Chris (I)",
                 "name": "Chris Pine",
                 "billing": 1,
@@ -211,7 +211,7 @@ export const moviesMock: Movie[] = [
                 ]
             },
             {
-                "id": "/name/nm0704270",
+                "id": "nm0704270",
                 "legacyNameText": "Quinto, Zachary",
                 "name": "Zachary Quinto",
                 "billing": 2,
@@ -227,7 +227,7 @@ export const moviesMock: Movie[] = [
                 ]
             },
             {
-                "id": "/name/nm0881631",
+                "id": "nm0881631",
                 "legacyNameText": "Urban, Karl",
                 "name": "Karl Urban",
                 "billing": 3,
@@ -261,7 +261,7 @@ export const moviesMock: Movie[] = [
         "year": 2020,
         "principals": [
             {
-                "id": "/name/nm7108248",
+                "id": "nm7108248",
                 "legacyNameText": "Suzy, Bae",
                 "name": "Bae Suzy",
                 "category": "actress",
@@ -278,7 +278,7 @@ export const moviesMock: Movie[] = [
                 "startYear": 2020
             },
             {
-                "id": "/name/nm7632185",
+                "id": "nm7632185",
                 "legacyNameText": "Joo-Hyuk, Nam",
                 "name": "Nam Joo-Hyuk",
                 "category": "actor",
@@ -295,7 +295,7 @@ export const moviesMock: Movie[] = [
                 "startYear": 2020
             },
             {
-                "id": "/name/nm9170918",
+                "id": "nm9170918",
                 "legacyNameText": "Seon-Ho, Kim",
                 "name": "Kim Seon-Ho",
                 "category": "actor",
@@ -328,7 +328,7 @@ export const moviesMock: Movie[] = [
         "principals": [
             {
                 "disambiguation": "I",
-                "id": "/name/nm0160550",
+                "id": "nm0160550",
                 "legacyNameText": "Christopher, Dennis (I)",
                 "name": "Dennis Christopher",
                 "billing": 1,
@@ -343,7 +343,7 @@ export const moviesMock: Movie[] = [
                 ]
             },
             {
-                "id": "/name/nm0000598",
+                "id": "nm0000598",
                 "legacyNameText": "Quaid, Dennis",
                 "name": "Dennis Quaid",
                 "billing": 2,
@@ -360,7 +360,7 @@ export const moviesMock: Movie[] = [
             },
             {
                 "disambiguation": "I",
-                "id": "/name/nm0827663",
+                "id": "nm0827663",
                 "legacyNameText": "Stern, Daniel (I)",
                 "name": "Daniel Stern",
                 "billing": 3,
@@ -391,7 +391,7 @@ export const moviesMock: Movie[] = [
         "year": 2007,
         "principals": [
             {
-                "id": "/name/nm0001173",
+                "id": "nm0001173",
                 "legacyNameText": "Eckhart, Aaron",
                 "name": "Aaron Eckhart",
                 "billing": 1,
@@ -408,7 +408,7 @@ export const moviesMock: Movie[] = [
             },
             {
                 "disambiguation": "I",
-                "id": "/name/nm0004695",
+                "id": "nm0004695",
                 "legacyNameText": "Alba, Jessica (I)",
                 "name": "Jessica Alba",
                 "billing": 2,
@@ -424,7 +424,7 @@ export const moviesMock: Movie[] = [
                 ]
             },
             {
-                "id": "/name/nm0503567",
+                "id": "nm0503567",
                 "legacyNameText": "Lerman, Logan",
                 "name": "Logan Lerman",
                 "billing": 4,
@@ -458,7 +458,7 @@ export const moviesMock: Movie[] = [
         "year": 2017,
         "principals": [
             {
-                "id": "/name/nm2792296",
+                "id": "nm2792296",
                 "legacyNameText": "Martin-Green, Sonequa",
                 "name": "Sonequa Martin-Green",
                 "category": "actress",
@@ -482,7 +482,7 @@ export const moviesMock: Movie[] = [
             },
             {
                 "disambiguation": "I",
-                "id": "/name/nm0427964",
+                "id": "nm0427964",
                 "legacyNameText": "Jones, Doug (I)",
                 "name": "Doug Jones",
                 "category": "actor",
@@ -504,7 +504,7 @@ export const moviesMock: Movie[] = [
                 "startYear": 2017
             },
             {
-                "id": "/name/nm0710829",
+                "id": "nm0710829",
                 "legacyNameText": "Rapp, Anthony",
                 "name": "Anthony Rapp",
                 "category": "actor",
@@ -546,7 +546,7 @@ export const moviesMock: Movie[] = [
         "principals": [
             {
                 "disambiguation": "I",
-                "id": "/name/nm1517976",
+                "id": "nm1517976",
                 "legacyNameText": "Pine, Chris (I)",
                 "name": "Chris Pine",
                 "billing": 1,
@@ -562,7 +562,7 @@ export const moviesMock: Movie[] = [
                 ]
             },
             {
-                "id": "/name/nm0704270",
+                "id": "nm0704270",
                 "legacyNameText": "Quinto, Zachary",
                 "name": "Zachary Quinto",
                 "billing": 2,
@@ -578,7 +578,7 @@ export const moviesMock: Movie[] = [
                 ]
             },
             {
-                "id": "/name/nm0670408",
+                "id": "nm0670408",
                 "legacyNameText": "Pegg, Simon",
                 "name": "Simon Pegg",
                 "billing": 8,
@@ -613,7 +613,7 @@ export const moviesMock: Movie[] = [
       "year": 2016,
       "principals": [
         {
-          "id": "/name/nm1843026",
+          "id": "nm1843026",
           "legacyNameText": "Jacobs, Gillian",
           "name": "Gillian Jacobs",
           "category": "actress",
@@ -631,7 +631,7 @@ export const moviesMock: Movie[] = [
           "startYear": 2016
         },
         {
-          "id": "/name/nm1770256",
+          "id": "nm1770256",
           "legacyNameText": "Rust, Paul",
           "name": "Paul Rust",
           "category": "actor",
@@ -649,7 +649,7 @@ export const moviesMock: Movie[] = [
           "startYear": 2016
         },
         {
-          "id": "/name/nm5307166",
+          "id": "nm5307166",
           "legacyNameText": "O'Doherty, Claudia",
           "name": "Claudia O'Doherty",
           "category": "actress",
@@ -682,7 +682,7 @@ export const moviesMock: Movie[] = [
       "year": 2012,
       "principals": [
         {
-          "id": "/name/nm0004462",
+          "id": "nm0004462",
           "legacyNameText": "Trintignant, Jean-Louis",
           "name": "Jean-Louis Trintignant",
           "billing": 1,
@@ -698,7 +698,7 @@ export const moviesMock: Movie[] = [
           ]
         },
         {
-          "id": "/name/nm0728938",
+          "id": "nm0728938",
           "legacyNameText": "Riva, Emmanuelle",
           "name": "Emmanuelle Riva",
           "billing": 2,
@@ -714,7 +714,7 @@ export const moviesMock: Movie[] = [
           ]
         },
         {
-          "id": "/name/nm0001376",
+          "id": "nm0001376",
           "legacyNameText": "Huppert, Isabelle",
           "name": "Isabelle Huppert",
           "billing": 3,
@@ -745,7 +745,7 @@ export const moviesMock: Movie[] = [
       "year": 2021,
       "principals": [
         {
-          "id": "/name/nm2400045",
+          "id": "nm2400045",
           "legacyNameText": "Dobrev, Nina",
           "name": "Nina Dobrev",
           "billing": 1,
@@ -760,7 +760,7 @@ export const moviesMock: Movie[] = [
           ]
         },
         {
-          "id": "/name/nm4497202",
+          "id": "nm4497202",
           "legacyNameText": "Yang, Jimmy O.",
           "name": "Jimmy O. Yang",
           "billing": 2,
@@ -775,7 +775,7 @@ export const moviesMock: Movie[] = [
           ]
         },
         {
-          "id": "/name/nm6651162",
+          "id": "nm6651162",
           "legacyNameText": "Barnet, Darren",
           "name": "Darren Barnet",
           "billing": 3,
@@ -806,7 +806,7 @@ export const moviesMock: Movie[] = [
       "principals": [
         {
           "disambiguation": "I",
-          "id": "/name/nm0000424",
+          "id": "nm0000424",
           "legacyNameText": "Grant, Hugh (I)",
           "name": "Hugh Grant",
           "billing": 16,
@@ -822,7 +822,7 @@ export const moviesMock: Movie[] = [
           ]
         },
         {
-          "id": "/name/nm0567356",
+          "id": "nm0567356",
           "legacyNameText": "McCutcheon, Martine",
           "name": "Martine McCutcheon",
           "billing": 20,
@@ -838,7 +838,7 @@ export const moviesMock: Movie[] = [
           ]
         },
         {
-          "id": "/name/nm0000553",
+          "id": "nm0000553",
           "legacyNameText": "Neeson, Liam",
           "name": "Liam Neeson",
           "billing": 6,
@@ -873,7 +873,7 @@ export const moviesMock: Movie[] = [
       "principals": [
         {
           "disambiguation": "I",
-          "id": "/name/nm0447695",
+          "id": "nm0447695",
           "legacyNameText": "Kendrick, Anna (I)",
           "name": "Anna Kendrick",
           "category": "actress",
@@ -890,7 +890,7 @@ export const moviesMock: Movie[] = [
           "startYear": 2020
         },
         {
-          "id": "/name/nm3856316",
+          "id": "nm3856316",
           "legacyNameText": "Chao, Zoe",
           "name": "Zoe Chao",
           "category": "actress",
@@ -907,7 +907,7 @@ export const moviesMock: Movie[] = [
           "startYear": 2020
         },
         {
-          "id": "/name/nm0114430",
+          "id": "nm0114430",
           "legacyNameText": "Vack, Peter",
           "name": "Peter Vack",
           "category": "actor",
@@ -940,7 +940,7 @@ export const moviesMock: Movie[] = [
       "principals": [
         {
           "disambiguation": "I",
-          "id": "/name/nm0005351",
+          "id": "nm0005351",
           "legacyNameText": "Reynolds, Ryan (I)",
           "name": "Ryan Reynolds",
           "billing": 1,
@@ -965,7 +965,7 @@ export const moviesMock: Movie[] = [
           ]
         },
         {
-          "id": "/name/nm0000982",
+          "id": "nm0000982",
           "legacyNameText": "Brolin, Josh",
           "name": "Josh Brolin",
           "billing": 2,
@@ -981,7 +981,7 @@ export const moviesMock: Movie[] = [
           ]
         },
         {
-          "id": "/name/nm1072555",
+          "id": "nm1072555",
           "legacyNameText": "Baccarin, Morena",
           "name": "Morena Baccarin",
           "billing": 3,
@@ -1015,7 +1015,7 @@ export const moviesMock: Movie[] = [
       "year": 2017,
       "principals": [
         {
-          "id": "/name/nm2792296",
+          "id": "nm2792296",
           "legacyNameText": "Martin-Green, Sonequa",
           "name": "Sonequa Martin-Green",
           "category": "actress",
@@ -1039,7 +1039,7 @@ export const moviesMock: Movie[] = [
         },
         {
           "disambiguation": "I",
-          "id": "/name/nm0427964",
+          "id": "nm0427964",
           "legacyNameText": "Jones, Doug (I)",
           "name": "Doug Jones",
           "category": "actor",
@@ -1061,7 +1061,7 @@ export const moviesMock: Movie[] = [
           "startYear": 2017
         },
         {
-          "id": "/name/nm0710829",
+          "id": "nm0710829",
           "legacyNameText": "Rapp, Anthony",
           "name": "Anthony Rapp",
           "category": "actor",

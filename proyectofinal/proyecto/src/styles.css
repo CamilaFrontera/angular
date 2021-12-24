@@ -9,3 +9,6 @@ background: linear-gradient(to right, #222222, #000000); /* W3C, IE 10+/ Edge, F
 
 
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

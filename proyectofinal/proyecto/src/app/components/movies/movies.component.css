@@ -32,6 +32,15 @@ padding: 7px;
 }
 
 
-.card{
+.mat-card{
   margin-left: 10px;
+}
+
+.movie-container {
+  display: flex;
+  margin: 20px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+
 }
