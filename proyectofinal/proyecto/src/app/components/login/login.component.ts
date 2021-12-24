@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { User } from '../models/users.model';
 
 
@@ -7,18 +7,25 @@ import { User } from '../models/users.model';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
-
+export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
 
   constructor() { }
 
   ngOnInit(): void {
+    console.log('Hook onInit de Login.')
   }
 
-  selectedPerson(person: User){
 
+
+  ngAfterViewInit(): void {
+      console.log('Hook afterViewInit de Login')
+  }
+
+
+  ngOnDestroy(): void {
+      console.log('Hook onDestroy de Login.')
   }
 
   }
