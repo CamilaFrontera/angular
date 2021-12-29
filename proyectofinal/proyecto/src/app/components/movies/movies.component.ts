@@ -3,7 +3,7 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { Movie } from '../models/movie.model';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Subscription } from 'rxjs';
-import { timingSafeEqual } from 'crypto';
+
 
 
 @Component({

@@ -2,7 +2,7 @@ export const environment = {
   production: true,
 
 
-  moviesApi: 'https://61bcb65fd8542f0017824998.mockapi.io/api/'
+  movieRestApi: 'https://61bcb65fd8542f0017824998.mockapi.io/api/'
 
 
 };

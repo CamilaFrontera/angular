@@ -8,8 +8,7 @@ import { User } from '../components/models/users.model';
   providedIn: 'root'
 })
 export class UsersService {
-
-  private url = environment.moviesApi + 'persons'
+private url = environment.movieRestApi + 'users'
   constructor(private httpClient: HttpClient)  {}
 
   getList(): Observable<User[]>{

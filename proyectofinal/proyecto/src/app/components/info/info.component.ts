@@ -24,7 +24,7 @@ export class InfoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.movieService.getDetail(this.activatedRoute.snapshot.params['id']).subscribe(movie => console.log(movie))
+    // this.movieService.getDetail(this.activatedRoute.snapshot.params['id']).subscribe(movie => console.log(movie))
 
 
     // this.movieService.getList().subscribe( movies => this.movies = movies);
