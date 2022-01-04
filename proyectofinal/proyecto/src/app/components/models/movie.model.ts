@@ -1,3 +1,17 @@
+export interface MoviesApi{
+
+  Title: string,
+
+  Year : string,
+
+  imdbID : string,
+
+  Type : string,
+
+  Poster : string
+
+}
+
 export interface Role {
   character: string;
   characterId?: string;
@@ -26,17 +40,73 @@ export interface MovieImage {
 }
 
 export interface Movie {
-  id: string;
-  image: MovieImage;
-  runningTimeInMinutes: number;
-  title: string;
-  titleType: string;
-  year: number;
-  principals: Principal[];
-  nextEpisode?: string;
-  numberOfEpisodes?: number;
-  seriesEndYear?: number;
-  seriesStartYear?: number;
-  akas?: any[];
-  legacyNameText?: string;
+  Search :MoviesApi[],
+
+  totalResults : string,
+
+  Response : string
+}
+
+export interface OnlyMovie {
+
+  Actors: string,
+
+  Awards: string,
+
+  BoxOffice: string,
+
+  Country: string,
+
+  DVD: string,
+
+  Director: string,
+
+  Genre: string,
+
+  Language: string,
+
+  Metascore: string,
+
+  Plot: string,
+
+  Poster: string,
+
+  Production: string,
+
+  Rated: string,
+
+  Ratings: Rating[],
+
+  Released: string,
+
+  Response: string,
+
+  Runtime: string,
+
+  Title: string,
+
+  Type: string,
+
+  Website: string,
+
+  Writer: string,
+
+  Year: string,
+
+  imdbID: string,
+
+  imdbRating: string,
+
+  imdbVotes: string,
+
+}
+
+
+
+export interface Rating {
+
+  Source: string,
+
+  Value: string,
+
 }

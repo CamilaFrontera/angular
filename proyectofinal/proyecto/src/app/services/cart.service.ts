@@ -1,36 +1,28 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Observable, of } from 'rxjs';
-import { Movie } from '../components/models/movie.model';
+import {Observable} from 'rxjs';
+import { environment } from 'src/environments/environment';
+import { Cart } from '../components/models/cart.model';
+
+
 
 
 @Injectable()
 export class CartService {
 
-  private list: Movie[] = [];
 
+  constructor(
+private httpClient: HttpClient,
+  ) { }
 
-  constructor() { }
-
-  getlist(): Observable<Movie[]>{
-    return of(this.list)};
-
+private url =  environment.urlApi + 'cart'
+  getList(): Observable<Cart[]>{
+    return this.httpClient.get<Cart[]>(this.url);
   }
 
 
-  // addMovie(movie: Movie){
-  //   if(this.list.includes(m => {
-  //     return m.id === Movie.id
-  //   })){
-  //     this.list.push(movie)
-  //   }
-
-  //   console.log(this.list);
-  // }
-
-
-  // deleteMovie(movie: Movie){
-  //   //tengo que remover del array esa pelicula por id???
-
-  // }
-
-
+  postMovie(movie : Cart): Observable<Cart> {
+    console.log(movie)
+    return this.httpClient.post<Cart>(this.url,movie);
+  }
+}

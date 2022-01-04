@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { Movie } from '../models/movie.model';
+import { MoviesApi } from '../models/movie.model';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Subscription } from 'rxjs';
 
@@ -22,28 +22,43 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
     console.log('Hook en el constructor.')
    }
 
-  movies: Movie[] = [];
+  movies: MoviesApi[] = [];
 
   // para poder desuscribirme
 
   private suscripcion: Subscription | undefined;
 
   ngOnInit(): void {
-    this.suscripcion = this.movieService.getList().subscribe( movies => this.movies = movies);
+    this.suscripcion = this.movieService.getMovieList().subscribe( movieList=> {this.movies= movieList.Search
+    console.log(this.movies);
+    console.log(movieList)
     console.log('Hook onInit.')
+    })
   }
 
   ngAfterViewInit(): void {
       console.log('Hook afterViewInit')
   }
-  navigateToInfo(id: string) {
+  details(id: string) {
     this.router.navigate(['peliculas', id]);
   }
 
   ngOnDestroy(): void {
     // me desubscribo
-    this.suscripcion?.unsubscribe();
+    // this.suscripcion?.unsubscribe();
       console.log('Hook onDestroy.')
   }
+
+
+  //para busquedas
+  // async onMovieSelected(movie: string){
+  //   try{
+  //     const response = await this.movieService.getMovieList(movie, 'movie');
+  //     console.log(response);
+  //   }catch(e){
+  //     console.log(e);
+
+  //   }}
+
 
 }
