@@ -4,19 +4,32 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Movie</th>
-      <th scope="col">Amount</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
+      <th style="font-size: 2rem;" scope="col">#</th>
+      <th style="font-size: 2rem;" scope="col"></th>
+      <th style="font-size: 2rem;" scope="col">Movie</th>
+      <th style="font-size: 2rem;" scope="col">Amount</th>
 
     </tr>
-    <button type="submit" class="btn btn-primary btn-block">Rent</button>
-  </tbody>
+
+  </thead>
+  <tbody>
+    <tr *ngFor="let movie of allMoviesInCart; let i = index">
+      <th scope="row">{{i}}</th>
+      <td><img [src]="movie.url" alt="" style="height: 120px;"></td>
+      <td><h2>{{movie.title}}</h2></td>
+      <td>{{movie.price}}</td>
+      <td><button button type="button" class="btn btn-danger" (click)="delete(movie.id)" >Delete</button></td>
+  </tr>
 </table>
+
+<div class="d-flex justify-content-around">
+
+  <button type="button" class="btn btn-danger m-5 " style="font-size: 1.5rem; width: 20%; height: 100px;" >Empty</button>
 </div>
+</div>
+
+
+
+
+
+

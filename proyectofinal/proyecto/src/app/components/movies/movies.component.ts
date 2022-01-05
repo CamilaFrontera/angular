@@ -39,6 +39,7 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
   ngAfterViewInit(): void {
       console.log('Hook afterViewInit')
   }
+
   details(id: string) {
     this.router.navigate(['peliculas', id]);
   }

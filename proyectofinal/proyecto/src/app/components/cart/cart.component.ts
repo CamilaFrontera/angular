@@ -23,6 +23,12 @@ export class CartComponent implements OnInit {
     })
   }
 
+  delete(id : string){
+    this.cartService.delete(id).subscribe(data => alert(data));
+
+
+  }
+
   private subscription : Subscription | undefined;
 
   allMoviesInCart : Cart[] = [];

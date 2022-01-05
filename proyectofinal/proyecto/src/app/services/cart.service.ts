@@ -11,11 +11,10 @@ import { Cart } from '../components/models/cart.model';
 export class CartService {
 
 
-  constructor(
-private httpClient: HttpClient,
-  ) { }
+  constructor(private httpClient: HttpClient) { }
 
-private url =  environment.urlApi + 'cart'
+  private url =  environment.urlApi + 'cart'
+
   getList(): Observable<Cart[]>{
     return this.httpClient.get<Cart[]>(this.url);
   }
@@ -25,4 +24,9 @@ private url =  environment.urlApi + 'cart'
     console.log(movie)
     return this.httpClient.post<Cart>(this.url,movie);
   }
+
+  delete(id: string): Observable<boolean>{
+    return this.httpClient.delete<boolean>(`${this.url}/${id}`)
+  }
+
 }
