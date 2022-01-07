@@ -3,5 +3,6 @@ export const environment = {
 
  urlApi: 'https://61bcb65fd8542f0017824998.mockapi.io/api/',
   movieRestApi: 'http://www.omdbapi.com/',
-  key: '&apikey=66c3a25f'
+  key: '&apikey=66c3a25f',
+  cartRestApi:'http://localhost:3000/api/cart'
 };

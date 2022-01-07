@@ -30,7 +30,16 @@ export class InfoComponent implements OnInit {
 private subscription:  Subscription | undefined;
   ngOnInit(): void {
 
-    this.infoService.getById(this.activatedRoute.snapshot.params['id']).subscribe(movies => {this.movie=movies; console.log(movies), console.log(this.movie)})
+    this.infoService.getById(this.activatedRoute.snapshot.params['id']).subscribe(
+      movies => {this.movie=movies; console.log(movies), console.log(this.movie)})
+
+
+      //carrito con el profe
+
+      // this.cartService.getList().subscribe(
+      //   list => console.log(list)
+      // )
+
 
 
 console.log(this.movie)
