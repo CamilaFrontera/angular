@@ -12,6 +12,17 @@ export interface MoviesApi{
 
 }
 
+
+export interface AdminMovie{
+  id: number,
+  title: string,
+  genre: string,
+  characters: string,
+  description: string,
+  year: number,
+  image: string
+}
+
 export interface Role {
   character: string;
   characterId?: string;
