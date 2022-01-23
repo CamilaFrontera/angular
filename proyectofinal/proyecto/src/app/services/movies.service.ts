@@ -26,7 +26,7 @@ export class MoviesService {
   // }
 
   getMovieList(){
-   return this.httpClient.get<Movie>(this.url + this.query + 'Adam sandler' + this.apiKey )
+   return this.httpClient.get<Movie>(this.url + this.query + 'Disney' + this.apiKey )
   }
 
 
