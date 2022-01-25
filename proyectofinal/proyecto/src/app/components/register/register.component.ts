@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import  Swal  from 'sweetalert2';
@@ -13,40 +13,35 @@ import  Swal  from 'sweetalert2';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor( private router: Router, private authenticationService: AuthenticationService) { }
+  constructor( private formBuilder: FormBuilder, private router: Router, private authenticationService: AuthenticationService) { }
 
 
-  registerForm= new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
-    lastname: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(24)]),
-    email: new FormControl('', [Validators.required, Validators.email,  Validators.maxLength(35)]),
-    username: new FormControl('',[Validators.required, Validators.minLength(4), Validators.max(35)]),
-    password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(24)])
+  // registerForm= new FormGroup({
+  //   name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+  //   lastname: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(24)]),
+  //   email: new FormControl('', [Validators.required, Validators.email,  Validators.maxLength(35)]),
+  //   username: new FormControl('',[Validators.required, Validators.minLength(4), Validators.max(35)]),
+  //   password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(24)])
+  // });
+
+
+  registerForm: FormGroup = this.formBuilder.group({
+    name:     ['test', [ Validators.required ]],
+    lastname:    ['test', [ Validators.required ]],
+    username: ['test', [ Validators.required, Validators.minLength(3) ]],
+    email:     ['test@gmail.com', [ Validators.required, Validators.email ]],
+    password:     ['test', [ Validators.required ]],
   });
 
+  register() {
+    const { name, lastname, username, email, password} = this.registerForm.value;
 
-
- nameControl = this.registerForm.controls['name'];
-  lastnameControl = this.registerForm.controls['lastname'];
-  emailControl = this.registerForm.controls['email'];
-  usernameControl = this.registerForm.controls['username'];
-  passwordControl = this.registerForm.controls['password'];
-
-
-
-  submit() {
-    console.log(this.registerForm.value);
-    console.log(this.registerForm.valid);
-  }
-
-  registro(){
-    const {name, lastname, username, email, password} = this.registerForm.value;
     this.authenticationService.register(name, lastname, username, email, password)
-      .subscribe(status =>{
+      .subscribe( status => {
 
-        if(status === true){
-          this.router.navigateByUrl('login');
-        }else{
+        if ( status === true ) {
+          this.router.navigateByUrl('peliculas');
+        } else {
           Swal.fire('Error', status, 'error');
         }
       });

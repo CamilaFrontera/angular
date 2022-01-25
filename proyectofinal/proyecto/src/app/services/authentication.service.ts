@@ -22,31 +22,21 @@ export class AuthenticationService {
   //inyección de servicio
   constructor(private httpClient: HttpClient) { }
 
-  register(name:string, lastname: string, username: string, email: string, password: string){
-    //endpoint
-    const url =  `${this.baseUrl}/users/register`
-    //body de peticion
-    const body = {
-      name, lastname, email, username, password
-    }
+  register( name: string, lastname: string, username:string, email: string, password: string ) {
 
-    //peticion http post que devuelve observable de tipo AuthenticationResp
-    return this.httpClient.post<AuthenticationResp>(url, body)
-    //capturar informacion del usuario registrado
-    .pipe(
-      tap(resp =>{
-        if(resp.status === true){
-          localStorage.setItem('token', resp.token!)
-          this._loggedUser = {
-            uid: resp.uid,
-            username: resp.username,
+    const url  = `${ this.baseUrl }/users/register`;
+    const body = { name, lastname, username, email, password};
 
+    return this.httpClient.post<AuthenticationResp>( url, body )
+      .pipe(
+        tap( ({ status, token }) => {
+          if ( status === true ) {
+            localStorage.setItem('token', token! );
           }
-        }
-      }),
-      map(valid => valid.status),
-      catchError(err => of(err.error.msg))
-    )
+        }),
+        map( resp => resp.status ),
+        catchError( err => of(err.error.msg) )
+      );
 
   }
 

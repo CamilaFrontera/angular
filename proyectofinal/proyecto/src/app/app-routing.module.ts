@@ -34,6 +34,10 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
     path: 'carrito',
     canActivate: [ValidateTokenGuard],
     canLoad: [ValidateTokenGuard],
