@@ -22,6 +22,34 @@ export class AuthenticationService {
   //inyección de servicio
   constructor(private httpClient: HttpClient) { }
 
+  register(name:string, lastname: string, username: string, email: string, password: string){
+    //endpoint
+    const url =  `${this.baseUrl}/users/register`
+    //body de peticion
+    const body = {
+      name, lastname, email, username, password
+    }
+
+    //peticion http post que devuelve observable de tipo AuthenticationResp
+    return this.httpClient.post<AuthenticationResp>(url, body)
+    //capturar informacion del usuario registrado
+    .pipe(
+      tap(resp =>{
+        if(resp.status === true){
+          localStorage.setItem('token', resp.token!)
+          this._loggedUser = {
+            uid: resp.uid,
+            username: resp.username,
+
+          }
+        }
+      }),
+      map(valid => valid.status),
+      catchError(err => of(err.error.msg))
+    )
+
+  }
+
   // private uid = '';
   private username = '';
   // private token: any = null;
@@ -68,6 +96,12 @@ export class AuthenticationService {
     .pipe(
       map( resp =>{
 
+        localStorage.setItem('token', resp.token!);
+        this._loggedUser = {
+          uid: resp.uid,
+          username: resp.username,
+
+        }
         return resp.status;
       }),
       catchError(err => of(false))
@@ -81,6 +115,10 @@ export class AuthenticationService {
     return this.username != '';
 }
 
+
+logout(){
+  localStorage.clear();
+}
   }
 
 

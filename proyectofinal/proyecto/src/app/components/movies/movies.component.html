@@ -2,6 +2,7 @@
 
 <div class="row">
  <h1>Movies</h1>
+ <button style="width: fit-content;" (click)="logout()">Logout</button>
   <div class="row">
     <div class="movie-container d-flex flex-wrap justify-content-center">
       <mat-card class="example-card m-5" *ngFor="let movie of movies"  style="width: 18rem;">
@@ -16,6 +17,8 @@
           <p class="card-text">{{movie.Year}}</p>
         </mat-card-content>
       </mat-card>
+
+
 
   </div>
 

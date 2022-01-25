@@ -53,7 +53,10 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
       console.log('Hook onDestroy.')
   }
 
-
+logout(){
+  this.router.navigateByUrl('login');
+  this.authenticationService.logout();
+}
   //para busquedas
   // async onMovieSelected(movie: string){
   //   try{
