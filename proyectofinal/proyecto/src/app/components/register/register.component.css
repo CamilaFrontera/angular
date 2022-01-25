@@ -1,28 +1,42 @@
 body{
-  color: white;
-align-content: right;
 
-}
+  align-content: left;
 
-form{
-  padding-top: 10% ;
+  }
 
-}
+  form{
+    font-size: large;
+    padding-top: 10% ;
+    color:white;
+  }
 
-h1{
+  .title{
 
-  color: aliceblue;
-text-align: center;
-background: #DA22FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-border-radius: 4px;
-padding: 7px;
-}
-
-button{
+    color: aliceblue;
+  text-align: center;
   background: #DA22FF;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 4px;
+  padding: 7px;
+  }
 
-}
+  button{
+
+  font-size: large;
+    background: #DA22FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+
+
+  label{
+    color: black;
+  }
+
+  .mat-form-field{
+  align-items:center;
+  width: 100%;
+  color: black;
+  }

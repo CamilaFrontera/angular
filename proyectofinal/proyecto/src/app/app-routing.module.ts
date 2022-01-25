@@ -19,7 +19,8 @@ const routes: Routes = [
     path: 'peliculas',
 
     component: MoviesComponent,
-    // canActivate: [ProtectedGuardGuard],
+
+    //lazyload
     // loadChildren: () => import('./components/movies/movies.component').then( m => m.MoviesComponent)
 
   },

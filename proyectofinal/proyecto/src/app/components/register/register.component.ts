@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -10,25 +10,32 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
 
   registerForm= new FormGroup({
-    nombre: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(12)]),
-    apellido: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(24)]),
+    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]),
+    lastname: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(24)]),
     email: new FormControl('', [Validators.required, Validators.email,  Validators.maxLength(35)]),
-    // telefono: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(12)] ),
-    fechaNacimiento: new FormControl('', Validators.required),
-    password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(24)])
+    username: new FormControl('',[Validators.required, Validators.minLength(4), Validators.max(35)]),
+    password: new FormControl('', [Validators.required, Validators.minLength(4), Validators.maxLength(24)])
   });
 
 
-  nombreControl = this.registerForm.controls['nombre'];
-  apellidoControl = this.registerForm.controls['apellido'];
+
+ nameControl = this.registerForm.controls['name'];
+  lastnameControl = this.registerForm.controls['lastname'];
   emailControl = this.registerForm.controls['email'];
-  // telefonoControl = this.registerForm.controls['telefono'];
-  fechaNacimientoControl = this.registerForm.controls['fechaNacimiento'];
+  usernameControl = this.registerForm.controls['username'];
   passwordControl = this.registerForm.controls['password'];
+
+
+
+  submit() {
+    console.log(this.registerForm.value);
+    console.log(this.registerForm.valid);
+  }
+
 
   ngOnInit(): void {
   }

@@ -1,7 +1,8 @@
 import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
-import { userService } from 'src/app/services/login.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
+
 
 
 @Component({
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
 
-  constructor(private userService: userService, private router: Router) { }
+  constructor( private formBuilder: FormBuilder, private router: Router, private authenticationService: AuthenticationService) { }
 
   ngOnInit(): void {
     console.log('Hook onInit de Login.')
@@ -44,22 +45,19 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
 
-  form: FormGroup = new FormGroup({
-    user: new FormControl('', Validators.required),
-    password: new FormControl('', Validators.required),
+  loginForm: FormGroup = this.formBuilder.group({
+    user: new FormControl('cfrontera', Validators.required),
+    password: new FormControl('test', [Validators.required, Validators.minLength(4)]),
   });
 
-  submit() {
-    if (this.form.valid) {
-      this.userService.validateCredentials(this.form.get('user')?.value, this.form.get('password')?.value, )
-      .subscribe(valid => {
-        if (valid) {
-          this.router.navigate(['peliculas']);
-        } else {
-          this.error = 'Invalid User or Password';
-        }
-      })
-    }
+  login() {
+    console.log(this.loginForm.value);
+
+    const {username, password} = this.loginForm.value;
+    this.authenticationService.loginForm(username, password)
+      .subscribe(resp =>{
+        console.log(resp);
+      });
   }
   }
 

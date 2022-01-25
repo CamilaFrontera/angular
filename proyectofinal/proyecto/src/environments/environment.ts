@@ -6,5 +6,6 @@ export const environment = {
   key: '&apikey=66c3a25f',
   cartRestApi:'http://localhost:3000/api/cart',
   restApi :'http://localhost:3000/api/',
-  movieAdmin: 'https://61bcb65fd8542f0017824998.mockapi.io/api/movies'
+  movieAdmin: 'https://61bcb65fd8542f0017824998.mockapi.io/api/movies',
+  myApi: 'localhost:3000/users'
 };
