@@ -14,6 +14,9 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
 
+  get loggedUser(){
+    return this.authenticationService.loggedUser;
+  }
   constructor(
     private movieService: MoviesService,
     private router: Router, private authenticationService: AuthenticationService
@@ -21,11 +24,6 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
 
     console.log('Hook en el constructor.')
    }
-
-
-  get loggedUser(){
-    return this.authenticationService.loggedUser;
-  }
 
   movies: MoviesApi[] = [];
 

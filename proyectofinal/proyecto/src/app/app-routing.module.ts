@@ -7,31 +7,36 @@ import { MostViewedAdminComponent } from './components/most-viewed-admin/most-vi
 import { MostViewedComponent } from './components/most-viewed/most-viewed.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { RegisterComponent } from './components/register/register.component';
+import { ValidateTokenGuard } from './guard/validate-token.guard';
 
 
 
 const routes: Routes = [
   {
     path: 'peliculas/:id',
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard],
     component: InfoComponent
   },
   {
     path: 'peliculas',
-
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard],
     component: MoviesComponent,
 
     //lazyload
-    // loadChildren: () => import('./components/movies/movies.component').then( m => m.MoviesComponent)
+//loadChildren: () => import('./components/movies/movies.component').then( m => m.MoviesComponent)
 
   },
   {
-    path: 'mi-cuenta',
+    path: 'login',
 
     component: LoginComponent
   },
   {
     path: 'carrito',
-
+    canActivate: [ValidateTokenGuard],
+    canLoad: [ValidateTokenGuard],
     component: CartComponent
   },
 

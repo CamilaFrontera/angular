@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, of, pipe, tap } from 'rxjs';
+import { catchError, map, Observable, of, pipe, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { AuthenticationResp, LoggedUser } from '../components/interfaces/authentication';
 
@@ -57,12 +57,21 @@ export class AuthenticationService {
 
   }
 
-  validateLogin(){
+  validateLogin(): Observable<boolean>{
+
     const url = `${this.baseUrl}/users/revalidate`;
     //creamos header para la peticion
     const headers = new HttpHeaders()
     .set('z-token', localStorage.getItem('token') || '');     //seteamos en localstorage
-    return this.httpClient.get(url, {headers})
+
+    return this.httpClient.get<any>(url, {headers})
+    .pipe(
+      map( resp =>{
+
+        return resp.status;
+      }),
+      catchError(err => of(false))
+    );
 
   }
 
