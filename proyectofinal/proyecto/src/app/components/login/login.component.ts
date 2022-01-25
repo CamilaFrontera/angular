@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
 
   loginForm: FormGroup = this.formBuilder.group({
-    user: new FormControl('cfrontera', Validators.required),
+    username: new FormControl('cfrontera', Validators.required),
     password: new FormControl('test', [Validators.required, Validators.minLength(4)]),
   });
 
@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
     console.log(this.loginForm.value);
 
     const {username, password} = this.loginForm.value;
-    this.authenticationService.loginForm(username, password)
+    this.authenticationService.login(username, password)
       .subscribe(resp =>{
         console.log(resp);
       });

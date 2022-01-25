@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
-import { userService } from '../services/login.service';
+import { AuthenticationService } from '../services/authentication.service';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { userService } from '../services/login.service';
 export class ProtectedRouteGuard implements CanActivate {
 
   constructor(
-    private userService: userService,
+    private authenticationService: AuthenticationService,
     private router: Router
   ) {}
 
@@ -17,7 +18,7 @@ export class ProtectedRouteGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
-    const isUserLoggedIn = this.userService.isUserLoggedIn();
+    const isUserLoggedIn = this.authenticationService.isUserLoggedIn();
 
     if (!isUserLoggedIn) {
       this.router.navigate(['mi-cuenta']);
