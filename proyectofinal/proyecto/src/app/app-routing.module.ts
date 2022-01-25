@@ -7,7 +7,7 @@ import { MostViewedAdminComponent } from './components/most-viewed-admin/most-vi
 import { MostViewedComponent } from './components/most-viewed/most-viewed.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ProtectedRouteGuard } from './guard/protected-guard.guard';
+
 
 
 const routes: Routes = [
@@ -31,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'carrito',
-    canActivate: [ProtectedRouteGuard],
+
     component: CartComponent
   },
 
@@ -49,13 +49,13 @@ const routes: Routes = [
 
   {
   path: 'admin',
-  canActivate: [ProtectedRouteGuard],
+
   component: MostViewedAdminComponent
 },
 
   {
     path: 'most-viewed',
-    canActivate: [ProtectedRouteGuard],
+
     component: MostViewedComponent
   }
 

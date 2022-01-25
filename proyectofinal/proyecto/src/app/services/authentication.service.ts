@@ -1,10 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, pipe } from 'rxjs';
+import { catchError, map, of, pipe, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { AuthenticationResp } from '../components/interfaces/authentication';
-import jwt_decode from 'jwt-decode';
-import { AuthSettings } from '@firebase/auth';
+import { AuthenticationResp, LoggedUser } from '../components/interfaces/authentication';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,13 +12,19 @@ export class AuthenticationService {
 
   //url de mi api
   private baseUrl: string = environment.myApi;
+  //user para guardar informacion
+  private _loggedUser!: LoggedUser;
+
+  get loggedUser(){
+    return{...this._loggedUser};
+  }
 
   //inyección de servicio
   constructor(private httpClient: HttpClient) { }
 
-  private uid = '';
+  // private uid = '';
   private username = '';
-  private token: any = null;
+  // private token: any = null;
 
   login(username: string, password:string){
 
@@ -32,22 +37,35 @@ export class AuthenticationService {
 
     //peticion http post que devuelve observable de tipo AuthenticationResp
     return this.httpClient.post<AuthenticationResp>(url, body)
-    // .pipe (
-    //   map(response => {
-    //     if (response.status === true) {
 
-    //       const decodedToken: any = jwt_decode(this.token);
-    //       this.username = decodedToken?.username;
-    //       this.uid = this.uid;
-    //       return true;}
 
-    //       else {
-    //         this.token = null;
-    //         return false;
-    //       }
-    //     }
-    //     ))
+    //capturar informacion del usuario loggeado
+    .pipe(
+      tap(resp =>{
+        if(resp.status === true){
+          localStorage.setItem('token', resp.token!)
+          this._loggedUser = {
+            uid: resp.uid,
+            username: resp.username,
+
+          }
+        }
+      }),
+      map(valid => valid.status),
+      catchError(err => of(err.error.msg))
+    )
+
   }
+
+  validateLogin(){
+    const url = `${this.baseUrl}/users/revalidate`;
+    //creamos header para la peticion
+    const headers = new HttpHeaders()
+    .set('z-token', localStorage.getItem('token') || '');     //seteamos en localstorage
+    return this.httpClient.get(url, {headers})
+
+  }
+
 
 
   isUserLoggedIn(){

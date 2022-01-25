@@ -2,6 +2,7 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import Swal from 'sweetalert2';
 
 
 
@@ -10,7 +11,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
+export class LoginComponent implements OnInit, AfterViewInit {
 
 
 
@@ -27,9 +28,6 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
 
-  ngOnDestroy(): void {
-      console.log('Hook onDestroy de Login.')
-  }
 
 
   //comento xq reemplazamos la funcion validar
@@ -55,8 +53,13 @@ export class LoginComponent implements OnInit, AfterViewInit, OnDestroy {
 
     const {username, password} = this.loginForm.value;
     this.authenticationService.login(username, password)
-      .subscribe(resp =>{
-        console.log(resp);
+      .subscribe(status =>{
+
+        if(status === true){
+          this.router.navigateByUrl('peliculas');
+        }else{
+          Swal.fire('Error', status, 'error');
+        }
       });
   }
   }

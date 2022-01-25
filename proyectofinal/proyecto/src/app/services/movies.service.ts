@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { Movie, MoviesApi } from '../components/models/movie.model';
-
+import { Movie} from '../components/models/movie.model';
 import { environment } from 'src/environments/environment';
 
 @Injectable({

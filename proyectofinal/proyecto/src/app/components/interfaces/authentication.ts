@@ -6,3 +6,11 @@ export interface AuthenticationResp{
   token?: string;
 
 }
+
+
+export interface LoggedUser{
+  uid?: string;
+  username?: string,
+  email?: string;
+
+}

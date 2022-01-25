@@ -3,6 +3,7 @@ import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { MoviesApi } from '../models/movie.model';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Subscription } from 'rxjs';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 
 
@@ -13,14 +14,18 @@ import { Subscription } from 'rxjs';
 })
 export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
 
-
   constructor(
     private movieService: MoviesService,
-    private router: Router
+    private router: Router, private authenticationService: AuthenticationService
   ) {
 
     console.log('Hook en el constructor.')
    }
+
+
+  get loggedUser(){
+    return this.authenticationService.loggedUser;
+  }
 
   movies: MoviesApi[] = [];
 
