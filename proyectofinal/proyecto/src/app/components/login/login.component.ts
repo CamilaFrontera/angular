@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit, AfterViewInit {
 
 
   loginForm: FormGroup = this.formBuilder.group({
-    username: new FormControl('cfrontera', Validators.required),
+    username: new FormControl('test', Validators.required),
     password: new FormControl('test', [Validators.required, Validators.minLength(4)]),
   });
 
