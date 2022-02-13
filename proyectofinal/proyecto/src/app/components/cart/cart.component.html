@@ -1,34 +1,30 @@
-
 <div class="container">
   <h1>Shopping Cart</h1>
 <table class="table">
   <thead>
     <tr>
-      <th style="font-size: 2rem;" scope="col">#</th>
-      <th style="font-size: 2rem;" scope="col"></th>
-      <th style="font-size: 2rem;" scope="col">Movie</th>
-      <th style="font-size: 2rem;" scope="col">Amount</th>
-
+      <th scope="col">#</th>
+      <th scope="col">Image</th>
+      <th scope="col">Movie</th>
+      <th scope="col">Amount</th>
     </tr>
-
   </thead>
-  <tbody>
-    <tr *ngFor="let movie of allMoviesInCart; let i = index">
-      <th scope="row">{{i}}</th>
-      <td><img [src]="movie.url" alt="" style="height: 120px;"></td>
-      <td><h2>{{movie.title}}</h2></td>
-      <td>{{movie.price}}</td>
-      <td><button button type="button" class="btn btn-danger" (click)="delete(movie.id)" >Delete</button></td>
-  </tr>
+  <tbody >
+    <tr *ngFor="let movie of list; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td><img [src]="movie.url" style="height: 120px;"></td>
+      <td>{{movie.title}}</td>
+      <td>${{movie.price}}</td>
+      <td><button button type="button" class="btn btn-primary" (click)="removeMovie(movie.imdbID)">Delete</button></td>
+    </tr>
+    <tr>
+      <th scope="col">Total amount</th>
+      <th>${{total}}</th>
+    </tr>
+    <button button type="button" class="btn btn-primary" (click)="clearCart()">Remove All</button>
+  </tbody>
 </table>
-
-<div class="d-flex justify-content-around">
-
-  <button type="button" class="btn btn-danger m-5 " style="font-size: 1.5rem; width: 20%; height: 100px;" >Empty</button>
 </div>
-</div>
-
-
 
 
 

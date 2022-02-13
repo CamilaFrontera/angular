@@ -1,10 +1,10 @@
 <div class="row">
   <h1>Info</h1>
   <div class="card " style="width: 18rem;" >
-    <img [src]="movie.Poster" class="card-img-top" alt="...">
+    <img [src]="movie?.Poster" class="card-img-top" alt="...">
     <div class="card-body">
-      <h5 class="card-title">{{movie.Title}}</h5>
-<p>{{movie.Plot}}</p>
+      <h5 class="card-title">{{movie?.Title}}</h5>
+<p>{{movie?.Plot}}</p>
 <br>
 <button button type="button" class="btn btn-success"   (click)="addToCart()">Rent</button>
   </div>

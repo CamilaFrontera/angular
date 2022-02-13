@@ -4,6 +4,7 @@ import { MoviesApi } from '../models/movie.model';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CartService } from 'src/app/services/cart.service';
 
 
 
@@ -19,7 +20,9 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
   }
   constructor(
     private movieService: MoviesService,
-    private router: Router, private authenticationService: AuthenticationService
+    private router: Router,
+    private authenticationService: AuthenticationService,
+    private cartservice: CartService
   ) {
 
     console.log('Hook en el constructor.')
@@ -32,11 +35,12 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
   private suscripcion: Subscription | undefined;
 
   ngOnInit(): void {
-    this.suscripcion = this.movieService.getMovieList().subscribe( movieList=> {this.movies= movieList.Search
-    console.log(this.movies);
-    console.log(movieList)
-    console.log('Hook onInit.')
-    })
+    for(let i = 1; i<2; i++){
+      this.movieService.getMovieList(i).subscribe(response => {
+        this.movies = this.movies.concat(response.Search);
+        console.log(this.movies)
+      });
+    }
   }
 
   ngAfterViewInit(): void {
@@ -44,7 +48,7 @@ export class MoviesComponent implements OnInit, OnDestroy, AfterViewInit{
   }
 
   details(id: string) {
-    this.router.navigate(['peliculas', id]);
+    this.router.navigate(['peliculas',  id]);
   }
 
   ngOnDestroy(): void {

@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
       .subscribe( status => {
 
         if ( status === true ) {
-          this.router.navigateByUrl('peliculas');
+          this.router.navigateByUrl('login');
         } else {
           Swal.fire('Error', status, 'error');
         }

@@ -1,4 +1,10 @@
 export interface MoviesApi{
+  status: boolean;
+  id: string,
+  title: string,
+  url: string,
+
+  price: number,
 
   Title: string,
 

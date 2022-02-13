@@ -8,16 +8,15 @@ import { OnlyMovie } from '../components/models/movie.model';
   providedIn: 'root'
 })
 export class InfoService {
-  private url: string = environment.movieRestApi;
-  private apiKey:string = environment.key
-  private query: string = '?i='
+  private union = '?i=';
+  private url = environment.movieRestApi + this.union;
+  private apiKey = environment.key;
 
   constructor(private httpClient: HttpClient) { }
 
-  getById(id: string): Observable<OnlyMovie>{
-    return this.httpClient.get<OnlyMovie>(this.url + this.query +  id + this.apiKey)
-
-  }
+  getById( id: string): Observable<OnlyMovie | undefined>{
+    return this.httpClient.get<OnlyMovie>(this.url+id+this.apiKey);
+  };
 
 
 }

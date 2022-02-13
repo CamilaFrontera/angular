@@ -16,6 +16,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { MostViewedComponent } from './components/most-viewed/most-viewed.component';
 import { MostViewedAdminComponent } from './components/most-viewed-admin/most-viewed-admin.component';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { environment } from 'src/environments/environment';
+import { cartReducer } from './components/cart/store/cart.reducers';
 
 
 @NgModule({
@@ -38,7 +42,11 @@ import { MostViewedAdminComponent } from './components/most-viewed-admin/most-vi
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    StoreModule.forRoot({cart: cartReducer},{}),
+    EffectsModule.forRoot([]),
+
+
 
   ],
   providers: [CartService,
