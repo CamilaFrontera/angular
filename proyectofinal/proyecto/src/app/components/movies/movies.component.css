@@ -1,31 +1,24 @@
 p{
   color: black;
 }
-
 h5{
   color: violet;
 }
-
 .row{
   margin: 5%;
 }
-
 a{
   background: #DA22FF;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
 button{
   background: #DA22FF;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
 }
-
 h1{
-
-  color: aliceblue;
+color: aliceblue;
 text-align: center;
 background: #DA22FF;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #9733EE, #DA22FF);  /* Chrome 10-25, Safari 5.1-6 */
@@ -33,17 +26,12 @@ background: linear-gradient(to right, #9733EE, #DA22FF); /* W3C, IE 10+/ Edge, F
 border-radius: 4px;
 padding: 7px;
 }
-
-
 .mat-card{
   margin-left: 10px;
 }
-
 .movie-container {
   display: flex;
   margin: 20px;
   flex-wrap: wrap;
   justify-content: space-around;
-
-
 }

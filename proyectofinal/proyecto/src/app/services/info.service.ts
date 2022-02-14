@@ -9,14 +9,10 @@ import { OnlyMovie } from '../components/models/movie.model';
 })
 export class InfoService {
   private union = '?i=';
-  private url = environment.movieRestApi + this.union;
+  private url = environment.movieRestApi ;
   private apiKey = environment.key;
-
   constructor(private httpClient: HttpClient) { }
-
   getById( id: string): Observable<OnlyMovie | undefined>{
-    return this.httpClient.get<OnlyMovie>(this.url+id+this.apiKey);
+    return this.httpClient.get<OnlyMovie>(this.url+ this.union + id+this.apiKey);
   };
-
-
 }

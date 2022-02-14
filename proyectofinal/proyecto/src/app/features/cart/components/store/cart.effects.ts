@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { map, switchMap, tap } from "rxjs";
-import { Cart } from "../../models/cart.model";
-import { CartService } from "src/app/services/cart.service";
+import { Cart } from "../../../../components/models/cart.model";
+import { CartService } from "src/app/features/cart/services/cart.service";
 import { cartAddMovie, cartClear, cartDeleteMovie, cartSetContent } from "./cart.actions";
 
 @Injectable()
@@ -19,7 +19,7 @@ export class CartEffects {
       ofType(cartAddMovie),
       tap(() => console.log('entra')),
       switchMap(action => this.cartService.addToCart(action.movies)),
-     // map(data => cartSetContent({ movies: data.cartContent as Cart[] })),
+     map(data => cartSetContent({ movies: data.cartContent as Cart[] })),
     )
   );
 

@@ -1,16 +1,14 @@
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { MoviesApi, OnlyMovie } from '../models/movie.model';
+import { OnlyMovie } from '../models/movie.model';
 import { InfoService } from 'src/app/services/info.service';
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from 'src/app/features/cart/services/cart.service';
 import { Subscription } from 'rxjs';
 import { Cart } from '../models/cart.model';
 import { Store } from '@ngrx/store';
-import { cartAddMovie } from '../cart/store/cart.actions';
+import { cartAddMovie } from '../../features/cart/components/store/cart.actions';
 import Swal from 'sweetalert2';
-
-
 
 @Component({
   selector: 'app-info',
@@ -40,7 +38,6 @@ export class InfoComponent implements OnInit {
     exists:false
   };
 
-
   ngOnInit(): void {
 
     this.subscription.add(this.infoService.getById(this.activatedRoute.snapshot.params['id'])
@@ -53,19 +50,6 @@ export class InfoComponent implements OnInit {
     ));
     this.cartService.getCart().subscribe(movie => this.allmovies = movie);
   };
-
-
-      //carrito con el profe
-
-      // this.cartService.getList().subscribe(
-      //   list => console.log(list)
-      // )
-
-
-  navigateToDetail(id: string) {
-    this.router.navigate(['peliculas', id]);
-  }
-
   addToCart(){
     this.movieToCart.id = "";
     this.movieToCart.title = this.movie.Title;
@@ -77,7 +61,6 @@ export class InfoComponent implements OnInit {
     this.store.dispatch(cartAddMovie({movies : this.movieToCart }));
     Swal.fire("You added the movie", "Success");
   };
-
 
 }
 

@@ -7,10 +7,8 @@ export interface AuthenticationResp{
 
 }
 
-
 export interface LoggedUser{
   uid?: string;
   username?: string,
   email?: string;
-
 }

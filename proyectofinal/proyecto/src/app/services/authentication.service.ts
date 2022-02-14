@@ -18,12 +18,10 @@ export class AuthenticationService {
   get loggedUser(){
     return{...this._loggedUser};
   }
-
   //inyección de servicio
   constructor(private httpClient: HttpClient) { }
 
   register( name: string, lastname: string, username:string, email: string, password: string ) {
-
     const url  = `${ this.baseUrl }/users/register`;
     const body = { name, lastname, username, email, password};
 
@@ -37,26 +35,20 @@ export class AuthenticationService {
         map( resp => resp.status ),
         catchError( err => of(err.error.msg) )
       );
-
   }
-
   // private uid = '';
   private username = '';
   // private token: any = null;
 
   login(username: string, password:string){
-
     //endpoint
     const url =  `${this.baseUrl}/users/login`
     //body de peticion
     const body = {
       username, password
     }
-
     //peticion http post que devuelve observable de tipo AuthenticationResp
     return this.httpClient.post<AuthenticationResp>(url, body)
-
-
     //capturar informacion del usuario loggeado
     .pipe(
       tap(resp =>{
@@ -65,23 +57,18 @@ export class AuthenticationService {
           this._loggedUser = {
             uid: resp.uid,
             username: resp.username,
-
           }
         }
       }),
       map(valid => valid.status),
       catchError(err => of(err.error.msg))
     )
-
   }
-
   validateLogin(): Observable<boolean>{
-
     const url = `${this.baseUrl}/users/revalidate`;
     //creamos header para la peticion
     const headers = new HttpHeaders()
     .set('z-token', localStorage.getItem('token') || '');     //seteamos en localstorage
-
     return this.httpClient.get<any>(url, {headers})
     .pipe(
       map( resp =>{
@@ -90,7 +77,6 @@ export class AuthenticationService {
         this._loggedUser = {
           uid: resp.uid,
           username: resp.username,
-
         }
         return resp.status;
       }),
@@ -98,14 +84,9 @@ export class AuthenticationService {
     );
 
   }
-
-
-
   isUserLoggedIn(){
     return this.username != '';
 }
-
-
 logout(){
   localStorage.clear();
 }

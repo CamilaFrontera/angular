@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './components/cart/cart.component';
 import { InfoComponent } from './components/info/info.component';
 import { LoginComponent } from './components/login/login.component';
 import { MostViewedAdminComponent } from './components/most-viewed-admin/most-viewed-admin.component';
@@ -8,8 +7,6 @@ import { MostViewedComponent } from './components/most-viewed/most-viewed.compon
 import { MoviesComponent } from './components/movies/movies.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ValidateTokenGuard } from './guard/validate-token.guard';
-
-
 
 const routes: Routes = [
   {
@@ -23,14 +20,9 @@ const routes: Routes = [
     canActivate: [ValidateTokenGuard],
     canLoad: [ValidateTokenGuard],
     component: MoviesComponent,
-
-    //lazyload
-//loadChildren: () => import('./components/movies/movies.component').then( m => m.MoviesComponent)
-
   },
   {
     path: 'login',
-
     component: LoginComponent
   },
   {
@@ -41,9 +33,9 @@ const routes: Routes = [
     path: 'carrito',
     canActivate: [ValidateTokenGuard],
     canLoad: [ValidateTokenGuard],
-    component: CartComponent
+    //lazyload
+    loadChildren: () => import('./features/cart/cart.module').then( m => m.CartModule)
   },
-
   {
     path: '' ,
     redirectTo: 'peliculas',
@@ -53,24 +45,15 @@ const routes: Routes = [
     path: 'registrarse',
     component: RegisterComponent
   },
-
-
-
   {
   path: 'admin',
-
   component: MostViewedAdminComponent
 },
-
   {
     path: 'most-viewed',
-
     component: MostViewedComponent
   }
-
-
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

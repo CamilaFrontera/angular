@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { Cart } from "../../models/cart.model";
+import { Cart } from "../../../../components/models/cart.model";
 ;
 
 export const cartAddMovie = createAction(

@@ -8,11 +8,8 @@ import { AdminMovie } from '../components/models/movie.model';
   providedIn: 'root'
 })
 export class MostviewedService {
-
-  private urlAdmin = environment.movieAdmin
-
+private urlAdmin = environment.movieAdmin
   constructor(private httpClient: HttpClient) { }
-
   getMovies(): Observable< AdminMovie[]>{
     return this.httpClient.get< AdminMovie[]>(this.urlAdmin);
   }
