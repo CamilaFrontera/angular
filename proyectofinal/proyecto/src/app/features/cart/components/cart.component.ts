@@ -45,9 +45,9 @@ export class CartComponent implements OnInit {
   removeMovie(id:string){
     console.log('el id:' +id);
 
-    this.subscription.add(
-      this.cartService.removeMovie(id).subscribe(data => console.log(data))
-    )
+    // this.subscription.add(
+    //   this.cartService.removeMovie(id).subscribe(data => console.log(data))
+    // )
     let index = this.list.findIndex(m => m.imdbID == id)
     this.total -= this.list[index].price
     this.store.dispatch(cartDeleteMovie({id}));

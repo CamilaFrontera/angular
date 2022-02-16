@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 export class MoviesService {
   private apiKey:string = environment.key
   private query: string = '?s='
-  private url: string = environment.movieRestApi + this.query + 'Disney' + this.apiKey;
+  private url: string = environment.movieRestApi + this.query + 'Tarantino' + this.apiKey;
   constructor( private httpClient: HttpClient ) { }
   getMovieList(id: number): Observable<Movie> {
     let params = new HttpParams().append('page', String(id));

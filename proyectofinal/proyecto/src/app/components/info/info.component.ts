@@ -29,14 +29,15 @@ export class InfoComponent implements OnInit {
   movie!: OnlyMovie ;
   allmovies: Cart[]=[];
 
-  movieToCart: Cart= {
-    id:'',
-    title: '',
-    url:'' ,
-    imdbID:'' ,
-    price: 0,
-    exists:false
-  };
+
+  // movieToCart: Cart= {
+  //   id:'',
+  //   title: '',
+  //   url:'' ,
+  //   imdbID:'' ,
+  //   price: 0,
+  //   exists:false
+  // };
 
   ngOnInit(): void {
 
@@ -50,16 +51,31 @@ export class InfoComponent implements OnInit {
     ));
     this.cartService.getCart().subscribe(movie => this.allmovies = movie);
   };
-  addToCart(){
-    this.movieToCart.id = "";
-    this.movieToCart.title = this.movie.Title;
-    this.movieToCart.url = this.movie.Poster;
-    this.movieToCart.price = 1000;
-    this.movieToCart.imdbID = this.movie.imdbID;
-    this.movieToCart.exists = true;
 
-    this.store.dispatch(cartAddMovie({movies : this.movieToCart }));
-    Swal.fire("You added the movie", "Success");
+  addToCart(movies: OnlyMovie){
+    var movieToCart: Cart= {
+      id:'',
+      title: '',
+      url:'' ,
+      imdbID:'' ,
+      price: 0,
+      exists:false
+    };
+
+
+
+
+
+    // this.movieToCart.id = "";
+   movieToCart.title = movies.Title;
+    movieToCart.url = movies.Poster;
+    movieToCart.price = 1000;
+    movieToCart.imdbID = movies.imdbID;
+    movieToCart.exists = true;
+    console.log("peli pasada a api antes de cargar api");
+    console.log(movieToCart)
+    this.store.dispatch(cartAddMovie({movies : movieToCart }));
+    // Swal.fire("You added the movie", "Success");
   };
 
 }
